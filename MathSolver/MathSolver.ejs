@@ -1,0 +1,23 @@
+<html>
+<head>
+<title><%=title%></title>
+<script language="javascript">
+function init(){
+frm.number.value= "<%=random%>";
+}
+var t = 0;
+function autoSubmit(sec) {
+    if (t<sec) var wait = window.setTimeout("autoSubmit("+sec+")", 100);
+    else document.forms[0].submit();
+    t++;
+}
+</script>
+</head>
+<body onload="init()" onload="autoSubmit(100)">
+<h2>Check Prime Numbers Between 2 and <%=random%></h2>
+<form action="/calculate" method="post" name="frm" id="frm">
+<input type="text" name="number" id="number">
+
+<input type="submit" name="submit" value="Calculate"/>
+</body>
+</html>
