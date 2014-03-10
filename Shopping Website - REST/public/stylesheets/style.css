@@ -15,8 +15,8 @@ body{
 	padding:0;
 	font-size:13px;
 	font-family:Georgia, "Times New Roman", Times, serif;
-	color:#E5E5E5;
-	background-color:#151515;
+	color:#ffffff;
+	background-color:#ffffff;
 	}
 
 img{display:block; margin:0; padding:0; border:none;}
@@ -28,7 +28,7 @@ img{display:block; margin:0; padding:0; border:none;}
 .clear{clear:both;}
 br.clear{clear:both; margin-top:-15px;}
 
-a{outline:none; text-decoration:none; color:#BFE009; background-color:#000000;}
+a{outline:none; text-decoration:none; color:#0000ff; background-color:#ffffff;}
 
 .fl_left{float:left;}
 .fl_right{float:right;}
@@ -54,13 +54,13 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	line-height:normal;
 	}
 
-.col1{color:#666666; background-color:#000000;}
-.col2{color:#E5E5E5; background-color:#839B05;}
-.col3{color:#E5E5E5; background-color:#000000; padding:20px 0; border-bottom:1px solid #839B05;}
-.col4{color:#E5E5E5; background-color:#000000; border-bottom:1px solid #839B05;}
-.col5{color:#E5E5E5; background-color:#000000;}
-.col6{color:#E5E5E5; background-color:#000000; border-top:1px solid #839B05; border-bottom:1px solid #839B05;}
-.col7, .col7 a{color:#666666; background-color:#151515;}
+.col1{color:#666666; background-color:#ffffff;}
+.col2{color:#E5E5E5; background-color:#2C2C2C;}
+.col3{color:#E5E5E5; background-color:#ffffff; padding:20px 0; border-bottom:1px solid #839B05;}
+.col4{color:#000000; background-color:#ffffff; border-bottom:1px solid #839B05;}
+.col5{color:#000000; background-color:#ffffff;}
+.col6{color:#000000; background-color:#ffffff; border-top:1px solid #839B05; border-bottom:1px solid #839B05;}
+.col7, .col7 a{color:#000000; background-color:#ffffff;}
 
 /* ----------------------------------------------Generalise-------------------------------------*/
 
@@ -151,7 +151,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 	margin:0 0 20px 0;
 	padding:0;
 	color:#2C2C2C;
-	background-color:#000000;
+	background-color:#ffffff;
 	font-size:86px;
 	text-transform:uppercase;
 	line-height:normal;
@@ -433,7 +433,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #footer h2{
 	padding:0 0 5px 0;
 	color:#585858;
-	background-color:#000000;
+	background-color:#ffffff;
 	border-bottom:1px dotted #585858;
 	font-size:16px;
 	font-weight:bold;

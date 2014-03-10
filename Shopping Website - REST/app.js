@@ -48,14 +48,53 @@ app.get('/index.ejs', function(req, res){
 	});
 });
 
-//Sign-In Page
+//*************Sign-In Page****************
 app.get('/sign_in.ejs', function(req, res){
 	res.render('sign_in.ejs', {
-	title: "Shopping Website",
+	title: "Shopping Website"},
+	function(err, result) {
+		// render on success
+		if (!err) {
+			res.end(result);
+		}
+		// render or error
+		else {
+			res.end('An error occurred');
+			console.log(err);
+		}
 	});
 });
+app.post('/signin', function (req, res) {
+	if(!req.body.hasOwnProperty('username') ||!req.body.hasOwnProperty('password')) {
+		res.statusCode = 400;
+		return res.send('Error 400: Post syntax incorrect.');
+	}
+	//Function in mysql_registration page
+	mysql_registration.signin(function(err,results){
+		console.log("Results :"+results);
+		if(err){
+			throw err;
+		}else{
+			ejs.renderFile('index.ejs',
+					{name : results[1].name},
+					function(err, result) {
+				// render on success
+				if (!err) {
+					res.end(result);
+				}
+				// render or error
+				else {
+					res.end('An error occurred');
+					console.log(err);
+				}
+			});
+		}
+	},req.param('username'),req.param('password'));
+	
+});
+//***************Sign_In Page ends**************
 
-//Registration Page
+//***************Registration Page**************
 app.get('/registration.ejs', function(req, res){
 	res.render('registration.ejs', {
 	title: "Shopping Website"},
@@ -76,32 +115,12 @@ app.post('/validate', function (req, res) {
 		res.statusCode = 400;
 		return res.send('Error 400: Post syntax incorrect.');
 	}
-	
-	mysql_registration.fetchData(function(err,results){
-		console.log("Results :: "+results);
-		if(err){
-			throw err;
-		}else{
-			ejs.renderFile('home.ejs',
-					{first_name : results[0].name},
-					function(err, result) {
-				// render on success
-				if (!err) {
-					res.end(result);
-				}
-				// render or error
-				else {
-					res.end('An error occurred');
-					console.log(err);
-				}
-			});
-		}
-	},req.param('f_name'),req.param('l_name'),req.param('email'),req.param('pwd'));
-	
+	//Insert Values into Registration DB
+	mysql_registration.insert(req.param('f_name'),req.param('l_name'),req.param('email'),req.param('pwd'));
+	res.redirect('/index.ejs');
 });
 
-
-//Registration Page ends. . .
+//**************Registration Page ends**************
 
 app.get('/style-demo.ejs', function(req, res){
 	res.render('style-demo.ejs', {
