@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
+<title><%=title%></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link rel="stylesheet" href="../stylesheets/style.css" type="text/css" />
+<script>
+function setType(type)
+{
+  document.forms["add"].elements["submitType"].value = type;
+}
+</script>
+</head>
+<body id="top">
+<div class="wrapper col1">
+  <div id="header">
+    <div class="fl_left">
+      <h1>Shopping Website</h1>
+      <% if(name == null) {%>
+			<h2><p> - Welcome</p></h2>
+			<% } else { %>
+			<h2><p> - Welcome <%=name%></h2>
+			<p> <%=time%></p>
+		<% } %>
+    </div>
+    <div class="fl_right"><a href="#"><img src="images/demo/468x60.gif" alt="" /></a></div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topbar">
+    <div id="topnav">
+      <ul>
+        <li><a href="index.ejs">Home</a></li>
+        <% if(name == null) {%>
+        <li id="logon"><a href="sign_in.ejs">Log In</a></li>
+		<% } else { %>
+		<li id="logon"><a href="sign_out">Log out</a></li>
+		<% } %>
+        <li><a href="cart.ejs">Cart <b>(<%=count%>)</b></a></li>
+        <li class="active"><a href="products.ejs">Products</a>
+          <ul>
+            <li><a href="computers.ejs">Electronics & Computers</a></li>
+            <li><a href="books.ejs">Books & Audible</a></li>
+            <li><a href="home_tool.ejs">Home, Garden & Tools</a></li>
+            <li><a href="kids.ejs">Toys, kids & Baby</a></li>
+            <li><a href="clothing.ejs">Clothing, Shoes & Jewelry</a></li>
+            <li><a href="sports.ejs">Sports & Outdoors</a></li>
+          </ul>
+        </li>
+        <li class="last"><a href="#">Help</a></li>
+      </ul>
+    </div>
+    <div id="search">
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Site Search</legend>
+          <input type="text" value="Search Our Website&hellip;"  onfocus="this.value=(this.value=='Search Our Website&hellip;')? '' : this.value ;" />
+          <input type="submit" name="go" id="go" value="Go" />
+        </fieldset>
+      </form>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="container">
+    <div id="content">
+	<% if (alert.length != 0 && name == null) { %>
+	<font color="red">
+	<h2 color="red"> <%=alert%> </h2>
+	</font>
+	<% } %>
+      <h1>Welcome to Products Page of Amazon v2.0</h1>
+      <img class="imgr" src="images/demo/imgr.gif" alt="" width="125" height="125" />
+      <p><h2><b>Apple Computers</b></h2></p>
+      <p>
+	  <form name="add" action="/add_to_cart" method="post">
+	  <input type="hidden" name="submitType" id="submitType" >
+	  <h2><%=product1_name%></h2><a href="#">For More Details</a>
+	  <h2><b>Description</b></h2><%=product1_desc%></b>
+	  <h2><b>Price in dollars: <%=product1_price%></b></h2>
+	  <b><i>Quantity Available: </i></b> <%=product1_qty%>
+	  <input type="submit" name="button" id="button" value="Add to Cart" onclick="setType('1')"/>
+	  </p>
+	  
+      <img class="imgl" src="images/demo/imgl.gif" alt="" width="125" height="125" />
+      <p><h2><b>Hp Computers</b></h2></p>
+      <p>
+	  <h2><%=product3_name%></h2><a href="#">For More Details</a>
+	  <h2><b>Description</b></h2><%=product3_desc%></b>
+	  <h2><b>Price in dollars: <%=product3_price%></b></h2>
+	  <b><i>Quantity Available: </i></b> <%=product3_qty%>
+	  <input type="submit" name="button" id="button" value="Add to Cart" onclick="setType('3')"/>
+	  </p>
+		</form>
+      
+    </div>
+    <div id="column">
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col6">
+  <div id="footer">
+    <div class="footbox posts">
+      <h2>Get to Know Us</h2>
+      <ul>
+        <li><a href="#"></a>Careers</li>
+        <li><a href="#"></a>Investor Relations</li>
+        <li><a href="#"></a>Press Releases</li>
+        <li><a href="#"></a>Amazon and Our Planet</li>
+        <li><a href="#"></a>Amazon in the Community</li>
+      </ul>
+    </div>
+    <div class="footbox posts">
+      <h2>Make Money with Us</h2>
+      <ul>
+        <li><a href="#">Sell on Amazon</a></li>
+        <li><a href="#">Become an Affiliate</a></li>
+        <li><a href="#">Advertise Your Products</a></li>
+        <li><a href="#">Independently Publish with Us</a></li>
+      </ul>
+      <br class="clear" />
+    </div>
+    <div class="footbox posts">
+      <h2>Amazon Payment Products</h2>
+      <ul>
+        <li><a href="#">Amazon.com Rewards Visa Card</a></li>
+        <li><a href="#">Amazon.com Store Card</a></li>
+        <li><a href="#">Shop with Points</a></li>
+        <li><a href="#">Credit Card Marketplace</a></li>
+        <li><a href="#">Amazon Currency Converter</a></li>
+      </ul>
+    </div>
+    <div class="footbox twitter">
+      <h2>Let Us Help You</h2>
+      <ul>
+        <li><a href="#">Your Account</a></li>
+        <li><a href="#">Shipping Rates</a></li>
+        <li><a href="#">Amazon Prime</a></li>
+        <li><a href="#">Returns & Replacements</a></li>
+        <li><a href="#">Manage Your Kindle</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col7">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>
